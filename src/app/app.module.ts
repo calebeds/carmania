@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 // angular material
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ArticleComponent,
     FooterComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    HttpClientModule,
     CarouselModule.forRoot()
     
   ],
