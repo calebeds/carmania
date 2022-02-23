@@ -8,12 +8,15 @@ import { RequestsService, Articles } from '../lib/requests.service';
 })
 export class HomeComponent implements OnInit {
 
-  // The articles form db.json, but filtered
+  // The articles from db.json, but filtered
   carouselArticles!: Articles[];
+  homeArticles!: Articles[];
 
   constructor(private requestsService: RequestsService) { }
 
   ngOnInit(): void {
+
+    //Get carousel articles
     this.requestsService.getArticles({
       _sort: 'id', _order: 'desc', _start: 0, _end: 5 //the filters that will brushed up at request.service
     })
@@ -26,6 +29,17 @@ export class HomeComponent implements OnInit {
         console.log(this.carouselArticles);
       }
     );
+
+    // Get home articles
+    this.requestsService.getArticles({
+      _sort: 'id', _order: 'desc', _start: 5, _limit: 6
+    })
+    .subscribe(
+      (data: Articles[]) => {
+        this.homeArticles = data;
+        console.log(this.homeArticles);
+      }
+    )
 
     
   }
