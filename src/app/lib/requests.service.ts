@@ -28,6 +28,10 @@ export class RequestsService {
 
     }
 
+    getArticle(params: {id: number}): Observable<Articles> {
+        return this.http.get<Articles>(`${articlesRoute}/${params.id}`);
+    }
+
     getArticles(vars: RequestParams): Observable<Articles[]> {
         const filteredPart: string = this.generateFilters(vars);// Using this function for create the part of URL that filters
         const articleParams = new HttpParams({fromString: filteredPart});

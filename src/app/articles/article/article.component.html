@@ -1,1 +1,34 @@
-<p>article works!</p>
+<section
+    *ngIf="article"
+    class="banner-section"
+    [ngStyle]="{'background-image': 'url(assets/images/' + article.image + ')'}"
+>
+
+</section>
+
+<section
+    class="post-content-section"
+>
+    <div class="container" *ngIf="article">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12 post-content-block">
+                <small>{{article.created | date:'fullDate'}}</small>
+                <h1>{{article.title}}</h1>
+                <div [innerHTML]="content"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 post-content-block">
+                <h4>Latest articles</h4>
+                <div class="list-group">
+                    <a
+                        *ngFor="let art of latestArticles"
+                        class="list-group-item"
+                        [routerLink]="['/articles', art.id]"
+                    >
+                        <h5>{{art.title}}</h5>
+                        <p>{{art.description | truncate:[100, '...']}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
