@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,14 +15,18 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './header/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TruncatePipe } from './lib/pipes/truncate.pipe';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { CardComponent } from './articles/card/card.component';
+import { NewsletterComponent } from './lib/newsletter/newsletter.component';
 
-// ngx-boots
+// ngx-bootstrap
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 // angular material
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { CarouselComponent } from './home/carousel/carousel.component';
-import { CardComponent } from './articles/card/card.component';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +41,8 @@ import { CardComponent } from './articles/card/card.component';
     SidenavComponent,
     CarouselComponent,
     CardComponent,
-    TruncatePipe
+    TruncatePipe,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,9 @@ import { CardComponent } from './articles/card/card.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     HttpClientModule,
-    CarouselModule.forRoot()
+    ReactiveFormsModule,
+    CarouselModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
