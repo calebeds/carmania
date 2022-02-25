@@ -20,6 +20,9 @@ import { CardComponent } from './articles/card/card.component';
 import { NewsletterComponent } from './lib/newsletter/newsletter.component';
 import { CookieService } from 'ngx-cookie-service';
 
+// Infinite Scroll
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 // ngx-bootstrap
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
@@ -28,6 +31,10 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { FavsComponent } from './articles/favs/favs.component';
+import { SpinnerComponent } from './lib/spinner/spinner.component';
+
+//angular-epic-spinners
+import { SemipolarSpinnerModule } from 'angular-epic-spinners';
 
 
 
@@ -46,7 +53,8 @@ import { FavsComponent } from './articles/favs/favs.component';
     CardComponent,
     TruncatePipe,
     NewsletterComponent,
-    FavsComponent
+    FavsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +64,8 @@ import { FavsComponent } from './articles/favs/favs.component';
     MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
+    InfiniteScrollModule,
+    SemipolarSpinnerModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot()
   ],
