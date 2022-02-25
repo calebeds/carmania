@@ -15,6 +15,12 @@
                 <small>{{article.created | date:'fullDate'}}</small>
                 <h1>{{article.title}}</h1>
                 <div [innerHTML]="content"></div>
+                <hr />
+                <app-favs
+                    [postId]="article.id"
+                    
+                >
+                </app-favs>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 post-content-block">
                 <h4>Latest articles</h4>

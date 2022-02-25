@@ -18,6 +18,7 @@ import { TruncatePipe } from './lib/pipes/truncate.pipe';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardComponent } from './articles/card/card.component';
 import { NewsletterComponent } from './lib/newsletter/newsletter.component';
+import { CookieService } from 'ngx-cookie-service';
 
 // ngx-bootstrap
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -25,6 +26,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 
 // angular material
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { FavsComponent } from './articles/favs/favs.component';
 
 
 
@@ -42,19 +45,23 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     CarouselComponent,
     CardComponent,
     TruncatePipe,
-    NewsletterComponent
+    NewsletterComponent,
+    FavsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
