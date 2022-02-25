@@ -1,4 +1,19 @@
-# Carmania
+# Overall
+The project runs on json-server and angular:
+
+ng serve --watch
+json-server --watch db.json --port 3004
+
+## External libraries
+
+It used some libraries from angular
+NGX Cookie Service
+Angular Material
+Angular Infinite Scroll
+ngx-infinite-scroll
+
+
+## Carmania
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
