@@ -6,10 +6,10 @@ json-server --watch db.json --port 3004
 
 ## External libraries
 
-It used some libraries from angular
-NGX Cookie Service
-Angular Material
-Angular Infinite Scroll
+It used some libraries from angular:
+NGX Cookie Service,
+Angular Material,
+Angular Infinite Scroll,
 ngx-infinite-scroll
 
 
