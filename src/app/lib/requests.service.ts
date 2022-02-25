@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { articlesRoute } from './routes';
-import { Observable } from 'rxjs';
+import { articlesRoute, contactsRoute } from './routes';
+import { Observable, catchError, throwError} from 'rxjs';
 
 export interface RequestParams {
     _sort?: string;
@@ -55,6 +55,14 @@ export class RequestsService {
         });
 
         return query;
+    }
+
+    storeMessage(message: {}): Observable<object> { // Store the contact message on db.json
+        return this.http.post(`${contactsRoute}`, message).pipe(
+            catchError((err) => {
+                return throwError(err);
+            })
+        );
     }
 
 }
