@@ -1,7 +1,7 @@
 # Overall
 The project runs on json-server and angular:
 
-ng serve --watch
+ng serve --watch,
 json-server --watch db.json --port 3004
 
 ## External libraries
